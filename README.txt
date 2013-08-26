@@ -14,4 +14,5 @@ http://gs:8080/git/notifyCommit?url=git@gs:/opt/git/conference.git&branches=mast
 Poll SCM
 
 A
+B
 
