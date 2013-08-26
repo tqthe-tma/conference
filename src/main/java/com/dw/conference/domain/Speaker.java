@@ -9,4 +9,5 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class Speaker {
     INTENTIONALLY FAILED
+    FOR TESTINg EMAIL NOTIFICATION
 }
