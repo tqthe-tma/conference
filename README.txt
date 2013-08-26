@@ -16,3 +16,6 @@ Poll SCM
 A
 B
 
+Test email notification
+
+
