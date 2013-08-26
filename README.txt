@@ -10,3 +10,5 @@ Test Post-Commit Jenkins
 // BUOI
 
 http://gs:8080/git/notifyCommit?url=git@gs:/opt/git/conference.git&branches=master
+
+Poll SCM
