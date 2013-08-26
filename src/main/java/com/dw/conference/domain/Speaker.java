@@ -8,4 +8,5 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooJpaActiveRecord
 public class Speaker {
+    INTENTIONALLY FAILED
 }
