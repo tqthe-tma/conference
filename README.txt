@@ -7,4 +7,6 @@ Test Post-Commit Jenkins
 
 // 1
 // 2
+// BUOI
 
+http://gs:8080/git/notifyCommit?url=git@gs:/opt/git/conference.git&branches=master
