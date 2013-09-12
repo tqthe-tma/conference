@@ -18,4 +18,4 @@ B
 
 Test email notification
 
-
+code change for rel-1.2.0
