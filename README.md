@@ -3,4 +3,4 @@ conference
 GitHub Jenkins demo
 --------------------
 ---------------------
-BUOI 
+BUOI lazy
