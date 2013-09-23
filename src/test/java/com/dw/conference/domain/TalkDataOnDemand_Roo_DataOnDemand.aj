@@ -3,6 +3,8 @@
 
 package com.dw.conference.domain;
 
+import com.dw.conference.domain.Speaker;
+import com.dw.conference.domain.SpeakerDataOnDemand;
 import com.dw.conference.domain.Talk;
 import com.dw.conference.domain.TalkDataOnDemand;
 import java.security.SecureRandom;
@@ -12,6 +14,7 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect TalkDataOnDemand_Roo_DataOnDemand {
@@ -22,9 +25,33 @@ privileged aspect TalkDataOnDemand_Roo_DataOnDemand {
     
     private List<Talk> TalkDataOnDemand.data;
     
+    @Autowired
+    SpeakerDataOnDemand TalkDataOnDemand.speakerDataOnDemand;
+    
     public Talk TalkDataOnDemand.getNewTransientTalk(int index) {
         Talk obj = new Talk();
+        setDescription(obj, index);
+        setSpeaker(obj, index);
+        setTitle(obj, index);
         return obj;
+    }
+    
+    public void TalkDataOnDemand.setDescription(Talk obj, int index) {
+        String description = "description_" + index;
+        if (description.length() > 4000) {
+            description = description.substring(0, 4000);
+        }
+        obj.setDescription(description);
+    }
+    
+    public void TalkDataOnDemand.setSpeaker(Talk obj, int index) {
+        Speaker speaker = speakerDataOnDemand.getRandomSpeaker();
+        obj.setSpeaker(speaker);
+    }
+    
+    public void TalkDataOnDemand.setTitle(Talk obj, int index) {
+        String title = "title_" + index;
+        obj.setTitle(title);
     }
     
     public Talk TalkDataOnDemand.getSpecificTalk(int index) {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_dw_conference_domain_Speaker" modelAttribute="speaker" path="/speakers" render="${empty dependencies}" z="msdA5mjPnyyGfLD8RNKcuTOhrmU=">
+        <field:input field="firstname" id="c_com_dw_conference_domain_Speaker_firstname" required="true" z="EJlX0o/YAQ78GigyG7izWzMzthA="/>
+        <field:input field="lastname" id="c_com_dw_conference_domain_Speaker_lastname" required="true" z="5GB4XU59jpGbvLmAa3I3SEzDJqk="/>
+        <field:input field="email" id="c_com_dw_conference_domain_Speaker_email" required="true" validationMessageCode="field_invalid_email" z="/B1IBTcGDuFqhltmiCQJw/9YX4o="/>
+        <field:input field="organization" id="c_com_dw_conference_domain_Speaker_organization" z="47rqzYvAOroIgPhqon2HZfw4tYc="/>
+        <field:datetime dateTimePattern="${speaker_birthdate_date_format}" field="birthdate" id="c_com_dw_conference_domain_Speaker_birthdate" past="true" required="true" z="u/Y0unxDzHxfb+LSy7gPh1bSb30="/>
+        <field:input field="age" id="c_com_dw_conference_domain_Speaker_age" max="60" min="25" required="true" validationMessageCode="field_invalid_integer" z="EbcZ4WGFxqRzpk/HvZoN5gcenl0="/>
+        <field:simple field="talks" id="c_com_dw_conference_domain_Speaker_talks" messageCode="entity_reference_not_managed" messageCodeAttribute="Talk" z="5I0C51jIthdmuwBqcA2svvrjA5s="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_dw_conference_domain_Speaker" render="${not empty dependencies}" z="6B59SPqizWL4jWvC2o4uwJfJi0Y="/>
+</div>

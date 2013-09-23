@@ -7,6 +7,7 @@ import com.dw.conference.domain.Speaker;
 import com.dw.conference.domain.SpeakerDataOnDemand;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -24,7 +25,46 @@ privileged aspect SpeakerDataOnDemand_Roo_DataOnDemand {
     
     public Speaker SpeakerDataOnDemand.getNewTransientSpeaker(int index) {
         Speaker obj = new Speaker();
+        setAge(obj, index);
+        setBirthdate(obj, index);
+        setEmail(obj, index);
+        setFirstname(obj, index);
+        setLastname(obj, index);
+        setOrganization(obj, index);
         return obj;
+    }
+    
+    public void SpeakerDataOnDemand.setAge(Speaker obj, int index) {
+        Long age = new Integer(index).longValue();
+        if (age < 25L || age > 60L) {
+            age = 60L;
+        }
+        obj.setAge(age);
+    }
+    
+    public void SpeakerDataOnDemand.setBirthdate(Speaker obj, int index) {
+        Date birthdate = new Date(new Date().getTime() - 10000000L);
+        obj.setBirthdate(birthdate);
+    }
+    
+    public void SpeakerDataOnDemand.setEmail(Speaker obj, int index) {
+        String email = "foo" + index + "@bar.com";
+        obj.setEmail(email);
+    }
+    
+    public void SpeakerDataOnDemand.setFirstname(Speaker obj, int index) {
+        String firstname = "firstname_" + index;
+        obj.setFirstname(firstname);
+    }
+    
+    public void SpeakerDataOnDemand.setLastname(Speaker obj, int index) {
+        String lastname = "lastname_" + index;
+        obj.setLastname(lastname);
+    }
+    
+    public void SpeakerDataOnDemand.setOrganization(Speaker obj, int index) {
+        String organization = "organization_" + index;
+        obj.setOrganization(organization);
     }
     
     public Speaker SpeakerDataOnDemand.getSpecificSpeaker(int index) {
