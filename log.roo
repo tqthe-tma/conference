@@ -23,3 +23,5 @@ field set --fieldName talks --type ~.domain.Talk --class ~.domain.Speaker --card
 field reference --fieldName speaker --type ~.domain.Speaker --class ~.domain.Talk 
 controller all --package ~.web
 logging setup --level INFO --package ALL_SPRING
+q
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-23 15:40:17
